@@ -1,11 +1,12 @@
+require("dotenv").config();
 const mysql = require("mysql2");
 
 function connectWithRetry() {
   const pool = mysql.createPool({
-    host: "database-nodejs.cy58ce4skr72.us-east-1.rds.amazonaws.com",
-    user: "admin",
-    password: "$Onlol54",
-    database: "appdb",
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
