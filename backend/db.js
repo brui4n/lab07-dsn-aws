@@ -2,9 +2,9 @@ const mysql = require("mysql2");
 
 function connectWithRetry() {
   const pool = mysql.createPool({
-    host: "db",
-    user: "root",
-    password: "root",
+    host: "database-nodejs.cy58ce4skr72.us-east-1.rds.amazonaws.com",
+    user: "admin",
+    password: "$Onlol54",
     database: "appdb",
     waitForConnections: true,
     connectionLimit: 10,
